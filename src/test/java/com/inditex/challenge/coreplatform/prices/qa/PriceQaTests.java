@@ -24,9 +24,6 @@ public class PriceQaTests {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private final Integer PRODUCT_ID = 35455;
-    private final Integer BRAND_ID = 1;
-
     @Test
     void testCase1() throws Exception {
         String date = "2020-06-14T10:00:00";
@@ -58,6 +55,8 @@ public class PriceQaTests {
     }
 
     private void performTest(String date, double expectedPrice) throws Exception {
+        final Integer PRODUCT_ID = 35455;
+        final Integer BRAND_ID = 1;
         MvcResult result = mockMvc.perform(get("/prices")
                         .param("brandId", BRAND_ID.toString())
                         .param("productId", PRODUCT_ID.toString())
