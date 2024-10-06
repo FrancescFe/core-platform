@@ -1,0 +1,25 @@
+name: Run QA Tests Manually
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-qa-tests:
+    name: Run QA Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Run QA Tests
+        run: mvn -Dtest=com.inditex.challenge.coreplatform.prices.qa.PriceQATests test
