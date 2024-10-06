@@ -56,6 +56,11 @@ Ejemplo de request:
 ```
 curl "http://localhost:8080/prices?productId=35455&brandId=1&date=2020-06-14T10:00:00"
 ```
-### 🧪 Casos de prueba
+## 🧪 Casos de prueba
 El enunciado esperaba que se validaran cinco casos de prueba, estos casos se han probado tanto manualmente como automatizados mediante una batería de tests de integración en la clase `PriceQATests.java`.
 Estos tests se ejecutan cada vez que se lanza la aplicación o se hace una build del proyecto (también en la action `Maven Build Check`, automática en cada PR).
+
+### Ejecutando los casos de prueba
+También se ha incluido la GitHub action [Run QA Tests Manually](https://github.com/FrancescFe/core-platform/actions/workflows/run-qa-tests.yml) para lanzar manualmente los casos de prueba.
+
+![](https://i.imgur.com/PTeLh8G.png)
