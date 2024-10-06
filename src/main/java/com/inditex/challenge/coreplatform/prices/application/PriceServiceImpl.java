@@ -25,7 +25,7 @@ public class PriceServiceImpl implements PriceService {
     public GetPriceResponseDTO findPrice(Integer brandId, Integer productId, LocalDateTime date)
             throws PriceNotFoundException {
         Price highestPriorityPrice = priceRepository
-                .findByProductIdAndBrandAndDateRangeOrderByPriority(brandId, productId, date)
+                .findTopByProductIdAndBrandAndDateRangeOrderByPriority(brandId, productId, date)
                 .orElseThrow(() -> new PriceNotFoundException(brandId, productId, date));
 
         return priceMapper.mapToGetPriceResponseDTO(highestPriorityPrice);

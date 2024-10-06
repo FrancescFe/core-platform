@@ -48,7 +48,7 @@ public class PriceServiceImplTest {
                 brandId, price.getStartDate(), price.getEndDate(), price.getPriceList(),
                 productId, price.getPriority(), price.getPrice(), price.getCurrency());
 
-        when(priceRepository.findByProductIdAndBrandAndDateRangeOrderByPriority(any(), any(), any()))
+        when(priceRepository.findTopByProductIdAndBrandAndDateRangeOrderByPriority(any(), any(), any()))
                 .thenReturn(Optional.of(price));
         when(priceMapper.mapToGetPriceResponseDTO(price)).thenReturn(expectedResponse);
 
@@ -64,7 +64,7 @@ public class PriceServiceImplTest {
         Integer productId = 35455;
         LocalDateTime date = LocalDateTime.parse("2020-06-14T10:00:00");
 
-        when(priceRepository.findByProductIdAndBrandAndDateRangeOrderByPriority(any(), any(), any()))
+        when(priceRepository.findTopByProductIdAndBrandAndDateRangeOrderByPriority(any(), any(), any()))
                 .thenReturn(Optional.empty());
 
         assertThrows(PriceNotFoundException.class, () -> priceService.findPrice(brandId, productId, date));
