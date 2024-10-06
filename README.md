@@ -46,11 +46,11 @@ src
 
 ### 📝 Endpoint
 El único endpoint que implementa la aplicación es:
-* GET '/prices'
+* GET `/prices`
   - Con tres parámetros:
-    * 'productId' (Integer): id del producto
-    * 'brandId' (Integer): id de la marca
-    * 'date' (LocalDateTime): la fecha en la que se consulta el precio del artículo
+    * `productId` (Integer): id del producto
+    * `brandId` (Integer): id de la marca
+    * `date` (LocalDateTime): la fecha en la que se consulta el precio del artículo
 
 Ejemplo de request:
 ```
