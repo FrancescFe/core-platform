@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.inditex.challenge</groupId>
     <artifactId>core-platform</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <name>core-platform</name>
     <description>Challenge project for Inditex Core Platform</description>
     <url/>
