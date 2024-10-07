@@ -48,7 +48,7 @@ Para desarrollar el código se han aplicado los principios SOLID y de buenas pr�
    ```
 3. La aplicación ya estará levantada y accesible desde el puerto `8080`
 
-### 📝 Probando el Endpoint /prices `8080`
+### 📝 Probando el Endpoint /prices
 Se puede revisar y testear la documentación de la API en:
 ```
 http://localhost:8080/swagger-ui.html
